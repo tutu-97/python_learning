@@ -1,12 +1,15 @@
 """
 SQL 综合案例，读取文件，写入MySQL数据库中
 """
-from file_define import TextFileReader, JsonFileReader
-from data_define import Record
 from pymysql import Connection
 
-text_file_reader = TextFileReader("D:/2011年1月销售数据.txt")
-json_file_reader = JsonFileReader("D:/2011年2月销售数据JSON.txt")
+from data_define import Record
+from file_define import TextFileReader, JsonFileReader
+
+text_file_reader = TextFileReader(
+    "D:/project/pythonproject/python-learn/11_面向对象/数据分析案例/2011年1月销售数据.txt")
+json_file_reader = JsonFileReader(
+    "D:/project/pythonproject/python-learn/11_面向对象/数据分析案例/2011年2月销售数据JSON.txt")
 
 jan_data: list[Record] = text_file_reader.read_data()
 feb_data: list[Record] = json_file_reader.read_data()
@@ -18,7 +21,7 @@ conn = Connection(
     host="localhost",
     port=3306,
     user="root",
-    password="123456",
+    password="tt123456",
     autocommit=True
 )
 # 获得游标对象

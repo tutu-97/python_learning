@@ -21,7 +21,7 @@ conn.select_db("test")
 # 执行sql
 # cursor.execute("create table test_pymysql(id int)")
 # 插入数据
-cursor.execute("insert into test_pymysql values(20240005)")
+cursor.execute("insert into test_pymysql values(20240003)")
 # 执行查询
 cursor.execute("select * from test_pymysql")
 # 获取查询结果

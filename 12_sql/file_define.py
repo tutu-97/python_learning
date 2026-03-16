@@ -54,8 +54,10 @@ class JsonFileReader(FileReader):
 
 
 if __name__ == '__main__':
-    text_file_reader = TextFileReader("D:/2011年1月销售数据.txt")
-    json_file_reader = JsonFileReader("D:/2011年2月销售数据JSON.txt")
+    text_file_reader = TextFileReader(
+        "D:\project\pythonproject\python-learn\\11_面向对象\数据分析案例\\2011年1月销售数据.txt")
+    json_file_reader = JsonFileReader(
+        "D:\project\pythonproject\python-learn\\11_面向对象\数据分析案例\\2011年2月销售数据JSON.txt")
     list1 = text_file_reader.read_data()
     list2 = json_file_reader.read_data()
 

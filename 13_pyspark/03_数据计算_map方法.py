@@ -1,9 +1,11 @@
 """
 演示RDD的map成员方法的使用
 """
-from pyspark import SparkConf, SparkContext
 import os
-os.environ['PYSPARK_PYTHON'] = "D:/dev/python/python310/python.exe"
+
+from pyspark import SparkConf, SparkContext
+
+os.environ['PYSPARK_PYTHON'] = "D:\\proApp\\Python3.10.4\\Python310\\python.exe"
 conf = SparkConf().setMaster("local[*]").setAppName("test_spark")
 sc = SparkContext(conf=conf)
 
@@ -13,11 +15,10 @@ rdd = sc.parallelize([1, 2, 3, 4, 5])
 # def func(data):
 #     return data * 10
 
+# *10再+5  链式调用 .map().map().map()...
 rdd2 = rdd.map(lambda x: x * 10).map(lambda x: x + 5)
 
 print(rdd2.collect())
 # (T) -> U
 # (T) -> T
-
-# 链式调用
 

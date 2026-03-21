@@ -5,16 +5,18 @@
 2. 全部城市，有哪些商品类别在售卖
 3. 北京市有哪些商品类别在售卖
 """
-from pyspark import SparkConf, SparkContext
-import os
 import json
-os.environ['PYSPARK_PYTHON'] = 'D:/dev/python/python310/python.exe'
+import os
+
+from pyspark import SparkConf, SparkContext
+
+os.environ['PYSPARK_PYTHON'] = 'D:\\proApp\\Python3.10.4\\Python310\\python.exe'
 conf = SparkConf().setMaster("local[*]").setAppName("test_spark")
 sc = SparkContext(conf=conf)
 
 # TODO 需求1： 城市销售额排名
 # 1.1 读取文件得到RDD
-file_rdd = sc.textFile("D:/orders.txt")
+file_rdd = sc.textFile("D:\\个人\\learning\\python\\资料\\第15章资料\\资料\\orders.txt")
 # 1.2 取出一个个JSON字符串
 json_str_rdd = file_rdd.flatMap(lambda x: x.split("|"))
 # 1.3 将一个个JSON字符串转换为字典
@@ -33,8 +35,8 @@ category_rdd = dict_rdd.map(lambda x: x['category']).distinct()
 print("需求2的结果：", category_rdd.collect())
 # 2.2 对全部商品类别进行去重
 # TODO 需求3： 北京市有哪些商品类别在售卖
-# 3.1 过滤北京市的数据
-beijing_data_rdd = dict_rdd.filter(lambda x: x['areaName'] == '北京')
+# 3.1 过滤上海市的数据
+beijing_data_rdd = dict_rdd.filter(lambda x: x['areaName'] == '上海')
 # 3.2 取出全部商品类别
 result3_rdd = beijing_data_rdd.map(lambda x: x['category']).distinct()
 print("需求3的结果：", result3_rdd.collect())

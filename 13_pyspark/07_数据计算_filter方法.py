@@ -1,9 +1,13 @@
 """
 演示RDD的filter成员方法的使用
+接收一个处理函数，可用lambda快速编写
+函数对rdd数据逐个处理，得到true的保留至返回值的RDD中
 """
-from pyspark import SparkConf, SparkContext
 import os
-os.environ['PYSPARK_PYTHON'] = "D:/dev/python/python310/python.exe"
+
+from pyspark import SparkConf, SparkContext
+
+os.environ['PYSPARK_PYTHON'] = "D:\\proApp\\Python3.10.4\\Python310\\python.exe"
 conf = SparkConf().setMaster("local[*]").setAppName("test_spark")
 sc = SparkContext(conf=conf)
 

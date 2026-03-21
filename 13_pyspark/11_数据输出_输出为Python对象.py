@@ -2,10 +2,11 @@
 演示将RDD输出为Python对象
 """
 
-from pyspark import SparkConf, SparkContext
 import os
-import json
-os.environ['PYSPARK_PYTHON'] = 'D:/dev/python/python310/python.exe'
+
+from pyspark import SparkConf, SparkContext
+
+os.environ['PYSPARK_PYTHON'] = 'D:\\proApp\\Python3.10.4\\Python310\\python.exe'
 conf = SparkConf().setMaster("local[*]").setAppName("test_spark")
 sc = SparkContext(conf=conf)
 

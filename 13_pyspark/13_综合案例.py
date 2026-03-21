@@ -2,17 +2,18 @@
 演示PySpark综合案例
 """
 
-from pyspark import SparkConf, SparkContext
 import os
-import json
-os.environ['PYSPARK_PYTHON'] = 'D:/dev/python/python310/python.exe'
-os.environ['HADOOP_HOME'] = "D:/dev/hadoop-3.0.0"
+
+from pyspark import SparkConf, SparkContext
+
+os.environ['PYSPARK_PYTHON'] = 'D:\\proApp\\Python3.10.4\\Python310\\python.exe'
+# os.environ['HADOOP_HOME'] = "D:/dev/hadoop-3.0.0"
 conf = SparkConf().setMaster("local[*]").setAppName("test_spark")
 conf.set("spark.default.parallelism", "1")
 sc = SparkContext(conf=conf)
 
 # 读取文件转换成RDD
-file_rdd = sc.textFile("D:/search_log.txt")
+file_rdd = sc.textFile("D:\\个人\\learning\\python\\资料\\第15章资料\\资料\\search_log.txt")
 # TODO 需求1： 热门搜索时间段Top3（小时精度）
 # 1.1 取出全部的时间并转换为小时
 # 1.2 转换为(小时, 1) 的二元元组
@@ -55,5 +56,5 @@ print("需求3的结果：", result3)
 # 4.1 转换为JSON格式的RDD
 # 4.2 写出为文件
 file_rdd.map(lambda x: x.split("\t")).\
-    map(lambda x: {"time": x[0], "user_id": x[1], "key_word": x[2], "rank1": x[3], "rank2": x[4], "url": x[5]}).\
-    saveAsTextFile("D:/output_json")
+    map(lambda x: {"time": x[0], "user_id": x[1], "key_word": x[2], "rank1": x[3], "rank2": x[4], "url": x[5]}). \
+    saveAsTextFile("D:\\个人\\learning\\python\\资料\\第15章资料\\资料\\output_json")

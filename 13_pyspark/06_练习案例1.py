@@ -2,14 +2,16 @@
 完成练习案例：单词计数统计
 """
 
+import os
+
 # 1. 构建执行环境入口对象
 from pyspark import SparkContext, SparkConf
-import os
-os.environ['PYSPARK_PYTHON'] = "D:/dev/python/python310/python.exe"
+
+os.environ['PYSPARK_PYTHON'] = "D:\\proApp\\Python3.10.4\\Python310\\python.exe"
 conf = SparkConf().setMaster("local[*]").setAppName("test_spark")
 sc = SparkContext(conf=conf)
 # 2. 读取数据文件
-rdd = sc.textFile("D:/hello.txt")
+rdd = sc.textFile("D:\\个人\\learning\\python\\资料\\第15章资料\\资料\\hello.txt")
 # 3. 取出全部单词
 word_rdd = rdd.flatMap(lambda x: x.split(" "))
 # 4. 将所有单词都转换成二元元组，单词为Key，value设置为1

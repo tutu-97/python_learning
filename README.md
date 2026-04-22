@@ -1,3 +1,70 @@
-# python_learning
+📘 Python 学习笔记（黑马程序员）
 
-This is the code and notes I used during my learning process of Python.
+本仓库记录了我系统学习 Python 编程基础（黑马程序员课程） 的全过程，涵盖基础语法、函数、数据容器、文件操作、异常处理、面向对象、SQL、PySpark 等内容。
+用于打牢 Python 基础，并为后续方向做准备 🚀
+
+项目结构
+Python-Learning/
+│
+├── 01_你好Python            # Python环境搭建、基础认知
+├── 02_Python入门语法       # 变量、数据类型、输入输出
+├── 03_Python判断语句       # if / else / 条件判断
+├── 04_Python循环语句       # for / while循环
+├── 05_函数                 # 函数定义与调用
+├── 06_函数进阶             # 参数传递、递归、匿名函数
+├── 07_数据容器             # list / tuple / dict / set
+├── 08_文件操作             # 文件读写操作
+├── 09_异常_模块_包         # 异常处理、模块、包管理
+├── 10_可视化案例           # Python数据可视化基础案例
+├── 11_面向对象             # 类、继承、多态
+├── 12_sql                  # Python操作数据库基础
+├── 13_pyspark              # PySpark基础使用
+├── 14_高级技巧             # Python进阶技巧整理
+│
+├── my_package              # 自定义模块包练习
+├── my_utils                # 工具函数封装练习
+├── data                    # 示例数据文件
+├── tmp                     # 临时测试文件
+
+
+学习内容
+当前完成模块如下：
+
+Python基础语法	✅
+判断语句	✅
+循环语句	✅
+函数基础	✅
+函数进阶	✅
+数据容器	✅
+文件操作	✅
+异常处理	✅
+模块与包	✅
+面向对象	✅
+SQL基础	✅
+PySpark基础	✅
+Python高级技巧	✅
+
+运行环境
+Python 3.12
+IDE: PyCharm
+OS: Windows
+
+学习来源
+课程来源：
+黑马程序员 Python 全套教程
+用于系统构建 Python 编程基础体系。
+
+本仓库特点：
+按章节系统整理学习代码
+覆盖 Python 从入门到进阶核心内容
+包含模块封装练习（my_package）
+包含工具函数封装（my_utils）
+包含 SQL 与 PySpark 入门实践
+包含数据可视化案例
+适合作为 Python 入门知识体系总结仓库。
+
+作者
+GitHub: tutu-97
+欢迎交流学习经验，一起进步 ⭐
+
+📌 本仓库用于记录本人系统学习 Python 的全过程，作为个人技术成长轨迹展示仓库持续更新中。
